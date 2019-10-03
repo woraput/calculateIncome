@@ -1,0 +1,88 @@
+<ion-header>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <ion-navbar>
+    <ion-title>
+      Calculate Income 6 Jars
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="fg">
+    <ion-row>
+      <div col-1></div>
+      <ion-card col-10>
+        <p>
+          1 ค่าใช้จ่ายในชีวิตประจำวัน ค่าน้ำ ค่าไฟ อาหาร เดินทาง น้ำมัน ยารักษาโรค เสื้อผ้า ค่าใช้จ่ายทั่วไป 55%
+          กสิกร
+        </p>
+        <p>
+          2 บัญชีเพื่ออิสรภาพทางการเงินใช้เพื่อการลงทุนให้เงินงอกเงยเท่านั้น 10% ฟรีเทรด (กรุงไทย)
+        </p>
+        <p>
+          3 เอาไว้ผลาญทำในสิ่งทีชอบที่รักของฟุ่มเฟือย Shopping กินหรู lifestyle สนอง need(ใช้เยอะๆ) 20% ไทยพานิชย์
+        </p>
+        <p>
+          4 เอาไว้ซื้อของราคาสูงโดยไม่ต้องผ่อน การท่องเที่ยวต่างประเทศ ซื้อกองทุน ซื้อสลากออมสิน 10% กรุงไทย
+        </p>
+        <p>
+          5 ทำบุญ แบ่งปันให้กับสังคมและผู้อื่น ตอบแทนผู้มีพระคุณ และช่วยเหลือและแบ่งปันผู้อื่น 5% ธนชาติ
+        </p>
+      </ion-card>
+      <div col-1></div>
+
+    </ion-row>
+
+    <div class="form-row">
+      <div class="input-group input-group-lg col-md-3 mx-auto">
+        <input formControlName="income" type="tel" style="text-align: center" class="form-control"
+          placeholder="Your Amount" aria-describedby="basic-addon1">
+        <div class="input-group-prepend">
+          <button class="btn btn-outline-secondary" type="button" (click)="calculateIncome()">Calculate</button>
+        </div>
+      </div>
+    </div>
+
+    <ion-row align-items-center>
+      <ion-col>
+        <jar-page [by]=55 title="ทั่วไป(กสิกร)55%" image="../../assets/imgs/-meal_89750.png"
+          iconImg="../../assets/icon/002429e4b28532ce5273cafa10be61c2.jpg">
+        </jar-page>
+      </ion-col>
+
+      <ion-col>
+        <jar-page [by]=10 title="ลงทุน(ฟรีเทรด-กรุงไทย)10%"
+          image="../../assets/imgs/coin_money_icon-icons.com_51091.png" iconImg="../../assets/icon/icon-ktb.png">
+        </jar-page>
+      </ion-col>
+
+      <ion-col>
+        <jar-page [by]=20 title="ฟุ่มเฟือย(SCB)20%" image="../../assets/imgs/chill.png"
+          iconImg="../../assets/icon/scb-icon.png">
+        </jar-page>
+      </ion-col>
+    </ion-row>
+
+    <ion-row align-items-center>
+      <div col-2>
+
+      </div>
+      <ion-col>
+        <jar-page [by]=10 title="ลงทุน กองทุน สลาก  <br/> (กรุงไทย)10%" image="../../assets/imgs/profits_78367.png"
+          iconImg="../../assets/icon/icon-ktb.png">
+        </jar-page>
+      </ion-col>
+
+      <ion-col>
+        <jar-page [by]=5 title="บริจาค กินข้าวครอบครัว ให้พ่อแม่ (ธนชาติ)5%"
+          image="../../assets/imgs/business-and-finance.png" iconImg="../../assets/icon/cd-icon-tbank.png">
+        </jar-page>
+      </ion-col>
+      <div col-2>
+
+      </div>
+    </ion-row>
+  </form>
+</ion-content>

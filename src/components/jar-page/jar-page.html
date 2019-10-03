@@ -1,0 +1,51 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div  class="card" style="width: 100%;">
+  <div class="container">
+    <img src="{{image}}" class="image" class="card-img-top" />
+    <div class="overlay">
+      <img class="imageIcon" src="{{iconImg}}" />
+    </div>
+  </div>
+  <div class="card-body">
+    <h1 class="card-title" class="title">{{title}} </h1>
+    <div class="card-text">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">แบ่งได้</label>
+        </div>
+        <input style="text-align: center" formControlName="jar" class="form-control" type="tel"
+          value="{{FormItem.get('byPercent').value }} " readonly>
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Bath</label>
+        </div>
+      </div>
+
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">ได้รับ</label>
+        </div>
+        <input formControlName="getJar1" style="text-align: center" class="form-control" type="tel"
+          (change)="amountChanged($event)" />
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Bath</label>
+        </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">เหลือ</label>
+        </div>
+        <input formControlName="remaining" style="text-align: center" class="form-control" type="tel"
+          value="{{FormItem.get('remaining').value}}" readonly />
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Bath</label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
